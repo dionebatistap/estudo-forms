@@ -2,23 +2,25 @@
 import { Button } from "@/components/ui/button";
 import { Inputfield } from "@/components/ui/input/field";
 import { FormProvider, useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-type ComponenteFormSemLibProps = {
-  campo_one: string;
-  campo_two: string;
-};
+const componenteFormSemLibSchema = z.object({
+  campo_one: z.string().min(5),
+  campo_two: z.string(),
+});
 
-const onSubmit = (data: ComponenteFormSemLibProps) => {
+//seria a ipagem do typescript
+type ComponenteFormSemLibSchema = z.infer<typeof componenteFormSemLibSchema>;
+
+const onSubmit = (data: ComponenteFormSemLibSchema) => {
   console.log(data);
 };
 
 export const ComponenteFormSemLib = () => {
-  const defaultValues: ComponenteFormSemLibProps = {
-    campo_one: "default_one",
-    campo_two: "default_two",
-  };
-
-  const methods = useForm<ComponenteFormSemLibProps>({ defaultValues });
+  const methods = useForm<ComponenteFormSemLibSchema>({
+    resolver: zodResolver(componenteFormSemLibSchema),
+  });
 
   return (
     <div className="w-[350px]">
