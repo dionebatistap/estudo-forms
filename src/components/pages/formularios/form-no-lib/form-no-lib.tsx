@@ -1,17 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Inputfield } from "@/components/ui/input/field";
+import { Inputfield } from "@/components/ui/input_controller/field";
 import { FormProvider, useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-const componenteFormSemLibSchema = z.object({
-  campo_one: z.string().min(5),
-  campo_two: z.string(),
-});
-
-//seria a ipagem do typescript
-type ComponenteFormSemLibSchema = z.infer<typeof componenteFormSemLibSchema>;
+import { componenteFormSemLibSchema } from "@/components/pages/formularios/form-no-lib/schema";
+import type { ComponenteFormSemLibSchema } from "@/components/pages/formularios/form-no-lib/schema";
+import { InputfieldRegister } from "@/components/ui/input_register/field";
 
 const onSubmit = (data: ComponenteFormSemLibSchema) => {
   console.log(data);
@@ -29,6 +23,9 @@ export const ComponenteFormSemLib = () => {
           <div className="grid w-full items-center gap-4">
             <Inputfield label="Campo One" name="campo_one" />
             <Inputfield label="Campo Two" name="campo_two" />
+            <InputfieldRegister label="Register" name="register" />
+            <InputfieldRegister label="outrocampo" name="outrocampo" />
+            <InputfieldRegister label="sobrenome" name="sobrenome" />
             <Button type="submit" className="w-max mt-6 ml-auto">
               Criar
             </Button>

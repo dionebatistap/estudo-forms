@@ -13,6 +13,14 @@ export default function Home() {
           <li>
             <Link href="/formulario-sem-lib">2 - Formulário Sem Lib</Link>
           </li>
+          <li>
+            <Link href="/formulario-pure-hook-form">
+              3 - Formulário Puro React Hook Form
+            </Link>
+          </li>
+          <li>
+            <Link href="/teste">3 - Formulário Testes</Link>
+          </li>
         </ul>
       </nav>
     </main>

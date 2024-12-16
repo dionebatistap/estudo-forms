@@ -15,9 +15,13 @@ export const Inputfield = ({ label, name, ...props }: InputfieldProps) => {
     <Controller
       control={control}
       name={name}
-      render={({ field }) => (
+      defaultValue={""}
+      render={({ field, fieldState }) => (
         <FieldWrapper label={label}>
-          <Input {...field} {...props} />
+          <Input {...props} {...field} />
+          {fieldState.error && (
+            <p className="text-sm text-red-500">{fieldState.error.message}</p>
+          )}
         </FieldWrapper>
       )}
     />

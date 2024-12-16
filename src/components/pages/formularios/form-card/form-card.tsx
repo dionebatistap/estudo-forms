@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Inputfield } from "@/components/ui/input/field";
+import { Inputfield } from "@/components/ui/input_controller/field";
 import { FormProvider, useForm } from "react-hook-form";
 
 type ComponenteFormCardData = { campocard: string };
