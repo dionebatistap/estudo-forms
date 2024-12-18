@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 
+import { cn } from "@/lib/utils";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,14 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={cn("min-h-screen bg-background antialiased")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           {children}
         </ThemeProvider>
       </body>
