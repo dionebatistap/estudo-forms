@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 import { cn } from "@/lib/utils";
 
@@ -28,7 +27,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <ThemeToggle /> */}
           {children}
         </ThemeProvider>
       </body>

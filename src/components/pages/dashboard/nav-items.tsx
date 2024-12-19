@@ -11,14 +11,19 @@ export const NavItems = () => {
 
   const navItems = [
     {
-      label: "Item 01",
+      label: "Página One",
       icon: Newspaper,
       path: "/dashboard/pagina-one",
     },
     {
-      label: "Item 02",
+      label: "Página Two",
       icon: SquareUser,
       path: "/dashboard/pagina-two",
+    },
+    {
+      label: "Página Three",
+      icon: SquareUser,
+      path: "/dashboard/pagina-three",
     },
   ];
 
