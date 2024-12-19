@@ -1,7 +1,9 @@
+import { ComponentePageThree } from "@/components/pages/dashboard/pagina-three";
+
 export default function PaginaThree() {
   return (
     <div>
-      <h1>Página Three</h1>
+      <ComponentePageThree />
     </div>
   );
 }
